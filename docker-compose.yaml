@@ -12,6 +12,23 @@ services:
       - 5432:5432
     networks:
       - postgres
+
+  etl:
+    container_name: etl-python
+    build: .
+    volumes:
+      - ./etl:/etl
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: raw
+    ports:
+      - 5432:5432
+    networks:
+      - postgres
+    depends_on:
+      - postgres
+
 networks:
   postgres:
     driver: bridge
