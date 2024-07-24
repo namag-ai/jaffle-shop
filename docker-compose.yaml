@@ -8,6 +8,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: raw
+      POSTGRES_HOST_NAME: postgres
     ports:
       - 5432:5432
     networks:
@@ -18,16 +19,17 @@ services:
     build: .
     volumes:
       - ./etl:/etl
+    networks:
+      - postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: raw
-    ports:
-      - 5432:5432
-    networks:
-      - postgres
+      POSTGRES_HOST_NAME: postgres
     depends_on:
       - postgres
+    ports:
+      - 8000:8000
 
 networks:
   postgres:
