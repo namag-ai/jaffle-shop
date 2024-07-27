@@ -4,7 +4,7 @@ with customers as (
 
 orders as (
     select * from {{ ref("stg_jaffle_shop__orders") }}
-)
+),
 
 customers_orders as (
     select 
@@ -14,11 +14,11 @@ customers_orders as (
         count(order_id) as number_of_orders
     from orders
     group by 1
-)
+),
 
 final as (
     select 
-        customers. customer_id,
+        customers.customer_id,
         customers.first_name,
         customers.last_name,
         customers_orders.first_order_date,
@@ -26,7 +26,8 @@ final as (
         coalesce(customers_orders.number_of_orders, 0)
             as number_of_orders
     from customers
-    left join customers_orders using customer_id
+    left join customers_orders on 
+        customers.customer_id = customers_orders.customer_id
 )
 
 select * from final
