@@ -11,7 +11,7 @@ RUN apt purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 
 RUN apt clean -y && rm -rf /var/lib/apt/lists/*
 
-COPY etl/requirements.txt .
+COPY requirements.txt .
 RUN pip install psycopg2
 RUN pip3 install -v --no-cache-dir -r requirements.txt
 RUN pip freeze > ./test.txt
