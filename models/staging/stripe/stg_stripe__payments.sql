@@ -3,4 +3,4 @@ select
     order_id,
     payment_method,
     amount / 100 as amount
-from raw.stripe.payments
+from {{ source("stripe","payments") }}
