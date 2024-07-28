@@ -1,10 +1,28 @@
 sources:
 
+
+
   - name: jaffle_shop
     description: jaffle shop database with orders and customers related transactions data
     database: raw
     schema: jaffle_shop
+
+    meta: 
+      data_client: jaffle_shop
+      owner: "@xpcosmos"
+      last_modified: "7/18/2024"
+      created_at: "7/18/2024"
+      update_frequency: daily
+
+    tags:
+      - jaffle_shop
+      - raw
+      - database
+      - posgresql
+      - daily
+
     tables:
+
     - name: customers
       columns:
         - name: id
@@ -29,37 +47,3 @@ sources:
         - name: order_date
           tests:
             - not_null
-
-    meta: 
-      data_client: jaffle_shop
-      owner: "@xpcosmos"
-      last_modified: "7/18/2024"
-      created_at: "7/18/2024"
-      update_frequency: daily
-
-    tags:
-      - jaffle_shop
-      - raw
-      - database
-      - posgresql
-      - daily
-
-  - name: stripe
-    description: stripe database with payment methods related data
-    schema: stripe
-    tables:
-      - name: payments
-        columns:
-          - name: id
-            tests:
-              - not_null
-              - unique
-          - name: order_id
-            tests:
-              - not_null
-          - name: payment_method
-            tests:
-              - not_null
-          - name: amount
-            tests:
-              - not_null

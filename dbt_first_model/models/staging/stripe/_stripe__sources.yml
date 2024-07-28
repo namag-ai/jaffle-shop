@@ -1,0 +1,39 @@
+sources:
+
+
+
+  - name: stripe
+    description: stripe database with payment methods related data
+    schema: stripe
+
+    meta: 
+      data_client: jaffle_shop
+      owner: "@xpcosmos"
+      last_modified: "7/18/2024"
+      created_at: "7/18/2024"
+      update_frequency: daily
+
+    tags:
+      - stripe
+      - raw
+      - database
+      - posgresql
+      - daily
+    
+    tables:
+
+      - name: payments
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+          - name: order_id
+            tests:
+              - not_null
+          - name: payment_method
+            tests:
+              - not_null
+          - name: amount
+            tests:
+              - not_null
