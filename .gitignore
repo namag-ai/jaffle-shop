@@ -1,4 +1,6 @@
+target/
+dbt_packages/
+logs/
 .env
-logs/*
 *.DS_Store
-target
+target/
