@@ -15,7 +15,7 @@ This DBT project is designed to transform raw data into a clean and structured f
 ### DBT
 
 1. **Install DBT**  
-   Follow the [DBT Installation Guide](https://docs.getdbt.com/dbt-cli/installation).
+   Follow the [dbt core installation guide](https://docs.getdbt.com/docs/core/installation-overview)
 
 2. **Clone the Repository**  
    ```bash
