@@ -6,8 +6,8 @@ This DBT project is designed to transform raw data into a clean and structured f
 
 ## Requirements
 
-- **DBT version**: 1.0 or higher
-- **Python version**: 3.7 or higher
+- **DBT version**: 1.8 or higher
+- **Python version**: 3.11 or higher
 - Supported databases: PostgreSQL
 
 ## Setup
