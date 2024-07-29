@@ -8,7 +8,7 @@ This DBT project is designed to transform raw data into a clean and structured f
 
 - **DBT version**: 1.8 or higher
 - **Python version**: 3.11 or higher
-- Supported databases: PostgreSQL
+- **Supported databases:** PostgreSQL
 
 ## Setup
 
@@ -25,12 +25,7 @@ This DBT project is designed to transform raw data into a clean and structured f
 
 3. **Configure DBT Profile**  
    Edit `profiles.yml` with your database connection details. Use environment variables for sensitive information.
-
-4. **Install Dependencies**
    
-   ```bash
-   dbt deps
-   ```
 
 ## Usage
 
@@ -41,7 +36,7 @@ This DBT project is designed to transform raw data into a clean and structured f
 
 - **Run specific models**  
   ```bash
-  dbt run --models <model_name>
+  dbt run --select <model_name>
   ```
 
 - **Test models**  
@@ -54,10 +49,6 @@ This DBT project is designed to transform raw data into a clean and structured f
   dbt snapshot
   ```
 
-- **Load seed data**  
-  ```bash
-  dbt seed
-  ```
 ### PostgresSQL via Docker
 
 ...
