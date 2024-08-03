@@ -2,7 +2,11 @@
 
 ## Overview
 
-This DBT project is designed to transform raw data into a clean and structured format for analysis. It leverages DBT's capabilities to create data models, run tests, and generate documentation.
+This DBT project is designed to transform raw data into a clean and structured format for analysis. It leverages DBT's capabilities to create data models, run tests, and generate documentation. This project is motivated by the course provided by dbt. The conclusion badged can be acessed [clicking here](https://api.accredible.com/v1/auth/invite?code=ca670980af5f4d0e59f1&credential_id=512ed5f1-176e-489b-ba28-6c41001e8e45&url=https%3A%2F%2Fcredentials.getdbt.com%2F512ed5f1-176e-489b-ba28-6c41001e8e45&ident=639e5f9b-990e-4d90-94a4-dfec9ed7555b/)
+
+This project provides the materialization of the transformation lineage bellow:
+
+![lineage](src/lineage.png)
 
 ## Requirements
 
@@ -18,44 +22,33 @@ This DBT project is designed to transform raw data into a clean and structured f
    Follow the [dbt core installation guide](https://docs.getdbt.com/docs/core/installation-overview)
 
 2. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/xpcosmos/jaffle-shop.git
-   cd jaffle-shop
-   ```
 
-3. **Configure DBT Profile**  
-   Edit `profiles.yml` with your database connection details. Use environment variables for sensitive information.
-   
+    ```bash
+    git clone https://github.com/xpcosmos/jaffle-shop.git
+    cd jaffle-shop
+    ```
+
+3. **Configure DBT Profile**
+
+    Edit `profiles.yml` with your database connection details. Use environment variables for sensitive information.
 
 ## Usage
 
-- **Run all models**  
-  ```bash
-  dbt run
-  ```
+1. **Create Database and insert data**
 
-- **Run specific models**  
-  ```bash
-  dbt run --select <model_name>
-  ```
+    Use the command bellow to create and insert data into the PostgresSQL running inside the container.
 
-- **Test models**  
-  ```bash
-  dbt test
-  ```
+    ```bash
+    docker compose up -d
+    ```
 
-- **Create snapshots**  
-  ```bash
-  dbt snapshot
-  ```
+2. **Run DBT transformation**
 
-### PostgresSQL via Docker
+    After installing dbt and ensure that the container is running, you must be able to build the models to run and test the transformation flow
 
-...
-
-### PySpark via Docker
-
-...
+    ```bash
+    dbt build
+    ```
 
 ## Documentation
 
