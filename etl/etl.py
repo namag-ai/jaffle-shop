@@ -42,13 +42,10 @@ for k, csv_files in schema_files.items():
         while attempts < 3:
             try:
                 df.to_sql(name=table_name,schema=k, con=engine, if_exists='replace', index=False)
+                print (f"Sucess table: {table_name}")
                 success+=1
                 break
             except OperationalError as erro:
                 attempts += 1
                 time.sleep(SLEEP_TIME)
-                print (f"OperationalError: {erro}")
-
-
-
-print(f'success in {success}/')
+                print (f"Erro Raised: OperationalError: {erro}")

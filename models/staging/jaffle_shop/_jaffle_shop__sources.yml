@@ -1,7 +1,4 @@
 sources:
-
-
-
   - name: jaffle_shop
     description: jaffle shop database with orders and customers related transactions data
     database: raw
