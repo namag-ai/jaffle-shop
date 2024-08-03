@@ -7,7 +7,7 @@ models:
         tests:
           - unique
           - not_null
-  
+
   - name: stg_jaffle_shop__orders
     columns:
       - name: order_id
@@ -15,6 +15,7 @@ models:
           - unique
           - not_null
       - name: status
+        description: "{{ doc('orders_status') }}"
         tests:
           - accepted_values:
               values: 
