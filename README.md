@@ -24,7 +24,7 @@ This project provides the materialization of the transformation lineage bellow:
 2. **Clone the Repository**  
 
     ```bash
-    git clone https://github.com/xpcosmos/jaffle-shop.git
+    git clone https://github.com/namag-ai/jaffle-shop.git
     cd jaffle-shop
     ```
 
